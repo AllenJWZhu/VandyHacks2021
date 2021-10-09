@@ -8,19 +8,19 @@ function validate_account() {
 
     if (address.value == "")
     { 
-        alert('邮箱信息不能为空');
+        alert('Email cannot be empty!');
     }
     else if (uname.value == "")
     {
-        alert('姓名不能为空');
+        alert('Username cannot be empty!');
     }
     else if (pword.value == "")
     {
-        alert('请填写密码');
+        alert('Please enter your password');
     }
     else if (confirm_pword.value == "") 
     {
-        alert('请再次输入密码');
+        alert('Please enter your password again');
     }
     else if(email.value == "admin@gmail.com" && username.value == "admin" && password.value == "123456" && confirm_pword.value == "123456")
     {
@@ -28,6 +28,6 @@ function validate_account() {
     } 
     else 
     {
-        alert("请输入正确的用户名和密码")
+        alert("Please enter the correct username or password!")
     }
 }

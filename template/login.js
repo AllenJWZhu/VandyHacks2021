@@ -6,11 +6,11 @@ function login() {
  
     if (username.value == "") {
  
-        alert("请输入用户名");
+        alert("Please enter your username");
  
     } else if (password.value  == "") {
  
-        alert("请输入密码");
+        alert("Please enter your password");
  
     } else if(username.value == "admin" && password.value == "123456") {
         //若复选框勾选,则添加Cookie
@@ -27,7 +27,7 @@ function login() {
     
     } else {
  
-        alert("请输入正确的用户名和密码！")
+        alert("Please enter the correct username or password!")
  
     }
 }
