@@ -3,7 +3,7 @@ body
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-image: url(../create_Account/create_account_images/Voyager-Record-Test-2.jpeg);
+    background-image: url(../template/create_account_images/Voyager-Record-Test-2.jpeg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -11,7 +11,7 @@ body
 
 .paralax 
 {
-    background-image: url(../create_Account/create_account_images/space_background.jpg);
+    background-image: url(../template/create_account_images/space_background.jpg);
     min-height: 1200px;
     background-size: cover;
     background-position: center;
