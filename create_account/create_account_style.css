@@ -167,5 +167,17 @@ input[id="signup-button"]:hover
 /* create a template grid of 1 fraction */
 .bottom_container {
 	display: grid;
-    grid-template-columns: 4fr;
+    grid-template-columns: 1fr;
+}
+
+/* create a template grid of 1 fraction */
+.bottom_container2 {
+	display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* create a template grid of 1 fraction */
+.bottom_container3 {
+	display: grid;
+    grid-template-columns: 1fr;
 }
