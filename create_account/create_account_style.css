@@ -163,3 +163,9 @@ input[id="signup-button"]:hover
 .login-link-wrapper a:hover {
 	color: black;
 }
+
+/* create a template grid of 1 fraction */
+.bottom_container {
+	display: grid;
+    grid-template-columns: 4fr;
+}
