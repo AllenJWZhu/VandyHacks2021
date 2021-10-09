@@ -3,7 +3,12 @@ body
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+}
+
+.paralax 
+{
     background-image: url(../create_Account/create_account_images/space_background.jpg);
+    min-height: 600px;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
