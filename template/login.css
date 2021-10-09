@@ -1,0 +1,129 @@
+body {
+    background-image: url("images/login/login.jpg");;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+ 
+#login_frame {
+    width: 600px;
+    height: 450px;
+    padding: 13px;
+ 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -300px;
+    margin-top: -225px;
+    padding: 100;
+ 
+    background-color: white;
+ 
+    text-align: center;
+}
+ 
+form p > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+ 
+#image_logo {
+    width: 100px;
+    height: 100px;
+
+    margin-top: 50px;
+    margin-left: 250px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+} 
+
+.label_input {
+    font-size: 20px;
+    font-family: 宋体;
+ 
+    width: 100px;
+    height: 42px;
+    line-height: 40px;
+    text-align: center;
+ 
+    color: white;
+    background-color: gray;
+    border: 0;
+
+}
+ 
+.text_field {
+    font-size: 20px;
+
+    width: 300px;
+    height: 40px;
+
+    background-color: lightgray;
+    border: 0;
+}
+
+#login_control {
+    width: 300px;
+    height: 80px;
+    margin-left: 150px;
+}
+
+#btn_login {
+    font-size: 20px;
+    font-family: 宋体;
+ 
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+ 
+    color: white;
+    background-color: #1c8adb;
+
+    float: center;
+}
+
+#seperation_line {
+    width: 400px;
+    height: 1px;
+    margin-top: 20px;
+
+    color: black;
+    fill: black;
+}
+
+#others {
+    width: 400px;
+    height: 40px;
+    margin-left: 100px;
+}
+
+#forget_pwd {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    float: right;
+ 
+}
+ 
+#forget_pwd:hover {
+    color: #1c8adb;
+    text-decoration: underline;
+}
+ 
+#sign_up {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    position: relative;
+    float: left;
+}
+
+#sign_up:hover {
+    color: #1c8adb;
+    text-decoration: underline;
+}
+
