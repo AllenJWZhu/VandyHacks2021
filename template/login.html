@@ -25,16 +25,13 @@
         setCookie ( name, "", -1 ) ;
     }
     window.onload = function () {
-    //从Cookie获取到用户名
     var username = getCookie("This is username");
-    //如果用户名为空,则给表单元素赋空值
     if ( username == "" )
     {
         document.getElementById("username").value="";
         document.getElementById("password").value="";
         document.getElementById("isRmbPwd").checked=false;
     }
-    //获取对应的密码,并把用户名,密码赋值给表单
     else
     {
         var password = getCookie(username);
