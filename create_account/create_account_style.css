@@ -3,12 +3,16 @@ body
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    background-image: url(../create_Account/create_account_images/voyager.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .paralax 
 {
     background-image: url(../create_Account/create_account_images/space_background.jpg);
-    min-height: 600px;
+    min-height: 1200px;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -17,7 +21,7 @@ body
 /* create a template grid of 1 fraction */
 .container {
 	display: grid;
-	grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
 }
 
 /*-----Nav styles-----*/
@@ -137,18 +141,6 @@ input[id="signup-button"]
 }
 
 input[id="signup-button"]:hover
-{
-    transform: scale(0.96);
-}
-
-/* wechat login button modifier */
-input[id="wechat-button"]
-{
-    background-color: #1aad19;
-    transition: 0.8s;
-}
-
-input[id="wechat-button"]:hover
 {
     transform: scale(0.96);
 }
