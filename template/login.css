@@ -6,6 +6,59 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+/* create a template grid of 1 fraction */
+.container {
+	display: grid;
+    grid-template-columns: 1fr;
+}
+
+/*-----Nav styles-----*/
+/* gives a space between the nav-wrapper divs */
+.nav-wrapper {
+	display: flex;
+	justify-content: space-between;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* gives a space between the left-side divs */
+.left-side {
+	display: flex;
+}
+
+/* modifies the stats of left-side div */
+.nav-wrapper > .left-side > div {
+	margin-right: 20px;
+	font-size: 0.98em;
+	text-transform: uppercase;
+}
+
+/* modifies the stats of the wrapper around the link */
+/* last step gives a trasition */
+.nav-link-wrapper {
+	height: 22px;
+	border-bottom: 1px solid transparent;
+	transition: border-bottom 0.5s;
+}
+
+/* changes the color of the link to grey and gives a transition */
+.nav-link-wrapper a {
+	color: #797878;
+	text-decoration: none;
+	transition: color 0.5s;
+}
+
+/* changes the wrapper border under the links to black when hover over */
+.nav-link-wrapper:hover {
+	border-bottom: 2px solid black;
+}
+
+/* changes the color of the links to black when hover over */
+.nav-link-wrapper a:hover {
+	color: black;
+}
  
 #login_frame {
     width: 600px;

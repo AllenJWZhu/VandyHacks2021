@@ -20,7 +20,6 @@ body
 .nav-wrapper {
 	display: flex;
 	justify-content: space-between;
-	background: rgba(255,255,255,0.7);
     padding-top: 30px;
     padding-left: 30px;
 	padding-right: 30px;
