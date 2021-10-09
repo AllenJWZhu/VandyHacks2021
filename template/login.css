@@ -1,8 +1,10 @@
 body {
     font-family: sans-serif;
     background-image: url("../template/create_account_images/space_background.jpg");;
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
  
 #login_frame {

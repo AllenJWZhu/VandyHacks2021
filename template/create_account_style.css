@@ -183,5 +183,23 @@ input[id="signup-button"]:hover
 }
 
 #title_image {
-    margin-left: 500px;
+    padding-top: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#subtitle_image {
+    display: block;
+    margin-left: 33%;
+    width: 50%;
+}
+
+#scrolldown {
+    padding-top: 480px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
