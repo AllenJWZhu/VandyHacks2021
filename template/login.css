@@ -1,5 +1,6 @@
 body {
-    background-image: url(".../login_images/login.jpg");;
+    font-family: sans-serif;
+    background-image: url("../template/create_account_images/space_background.jpg");;
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -8,6 +9,9 @@ body {
     width: 600px;
     height: 450px;
     padding: 13px;
+
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background:  rgba(255,255,255,0.5);
  
     position: absolute;
     left: 50%;
@@ -15,8 +19,6 @@ body {
     margin-left: -300px;
     margin-top: -225px;
     padding: 100;
- 
-    background-color: white;
  
     text-align: center;
 }
@@ -40,8 +42,8 @@ img {
 } 
 
 .label_input {
-    font-size: 20px;
-    font-family: 宋体;
+    font-size: 15px;
+    font-family: sans-serif;
  
     width: 100px;
     height: 42px;
@@ -55,13 +57,12 @@ img {
 }
  
 .text_field {
-    font-size: 20px;
-
-    width: 300px;
-    height: 40px;
-
-    background-color: lightgray;
-    border: 0;
+    width: 40%;
+    padding: 15px;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
 }
 
 #login_control {
@@ -71,18 +72,31 @@ img {
 }
 
 #btn_login {
-    font-size: 20px;
-    font-family: 宋体;
+    font-size: 15px;
+    font-family: sans-serif;
  
     width: 300px;
-    height: 40px;
+    height: 50px;
     line-height: 40px;
     text-align: center;
+    border: none;
  
     color: white;
     background-color: #1c8adb;
+    cursor: pointer;
 
     float: center;
+}
+
+#btn_login:hover[id="btn_login"]
+{
+    background-color: #1c8adb;
+    transition: 0.8s;
+}
+
+#btn_login[id="btn_login"]:hover
+{
+    transform: scale(0.96);
 }
 
 #seperation_line {
@@ -101,7 +115,7 @@ img {
 }
 
 #forget_pwd {
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     text-decoration: none;
     position: relative;
@@ -112,10 +126,11 @@ img {
 #forget_pwd:hover {
     color: #1c8adb;
     text-decoration: underline;
+    margin-left: 20px;
 }
  
 #sign_up {
-    font-size: 20px;
+    font-size: 15px;
     color: black;
     text-decoration: none;
     position: relative;
@@ -126,4 +141,3 @@ img {
     color: #1c8adb;
     text-decoration: underline;
 }
-
