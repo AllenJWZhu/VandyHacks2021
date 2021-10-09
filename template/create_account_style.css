@@ -181,3 +181,7 @@ input[id="signup-button"]:hover
 	display: grid;
     grid-template-columns: 1fr;
 }
+
+#title_image {
+    margin-left: 500px;
+}

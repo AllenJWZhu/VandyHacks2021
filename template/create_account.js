@@ -24,7 +24,7 @@ function validate_account() {
     }
     else if(email.value == "admin@gmail.com" && username.value == "admin" && password.value == "123456" && confirm_pword.value == "123456")
     {
-        window.location.href="personal_info.html";
+        window.location.href="main.html";
     } 
     else 
     {

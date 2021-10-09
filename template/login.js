@@ -23,7 +23,7 @@ function login() {
             delCookie ("This is username");
             delCookie (username.value.trim());
         } 
-        window.location.href="../course page/index.html";
+        window.location.href="../main.html";
     
     } else {
  
