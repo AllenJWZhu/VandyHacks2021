@@ -182,6 +182,12 @@ input[id="signup-button"]:hover
     grid-template-columns: 1fr;
 }
 
+/* create a template grid of 1 fraction */
+.bottom_container4 {
+	display: grid;
+    grid-template-columns: 1fr;
+}
+
 #title_image {
     padding-top: 80px;
     display: block;
