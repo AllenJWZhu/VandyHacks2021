@@ -104,7 +104,7 @@ def mosaic_to_disc(file_name, imdata):
     newim = Image.new("RGB", (1200, 1200))
     newim.putdata(disc_data)
 
-    newim.save("../img/the_golden_disc.png")
+    newim.save("static/uploads/the_golden_disc.png")
 
 
 def encrypt_to_disc(file_name, disc_data_file="disc_data.txt"):
