@@ -130,7 +130,10 @@ class Elliptic:
         decipher = []
         for charArr in code:
             kQx, kQy = Elliptic.get_ng(self, charArr[0], charArr[1], self.priv_key)
-            decipher.append(str((charArr[2] // kQx)))
+            if kQx < 1e-8:
+                decipher.append(str(charArr[2] * 1000))
+            else:
+                decipher.append(str((charArr[2] // kQx)))
         return decipher
 
     def find_first_feasible(self):

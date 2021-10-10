@@ -43,7 +43,6 @@ def read_image(jpg):
 
 
 def encrypt_picture(file_name):
-    # file_name = input("Enter the file path and name: ")
     encrypted_array = ellipticCurve.encrypt_to_disk(file_name)
 
     multiples_array = googleCloud.get_multiples(encrypted_array)
@@ -51,13 +50,11 @@ def encrypt_picture(file_name):
 
     display_image(encrypted_array).save("../img/final.png")
 
-    # print("final.png complete")
 
-
-def decrypt_picture(file_name):
-    original_encrypted = read_image("../img/final.png")
+def decrypt_picture(input, save_file_name):
+    original_encrypted = read_image(input)
     decrypted = ellipticCurve.decrypt_to_pic(original_encrypted)
-    imgToDat.restoreImg(decrypted, file_name)
+    imgToDat.restoreImg(decrypted, save_file_name)
 
 
 def golden_disc_data(disc):
@@ -81,11 +78,10 @@ def golden_disc_data(disc):
     f1.close()
 
 
-# def decrypt_to_picture()
-
-
-# 660 -880
 def mosaic_to_disc(file_name, imdata):
+    multiples_array = googleCloud.get_multiples(imdata)
+    googleCloud.edit_gsheet(multiples_array)
+
     f2 = open(file_name, 'r')
     raw_data = f2.read()
     raw_data = raw_data[1:len(raw_data) - 1].split(', ')
@@ -112,12 +108,44 @@ def mosaic_to_disc(file_name, imdata):
 
 
 def encrypt_to_disc(file_name, disc_data_file="disc_data.txt"):
+    """
+    :param file_name: image path and name to encrypt
+    :param disc_data_file: the data file of the disc picture
+    :return: save the final picture to the img folder with a name of "the_golden_disc.png"
+    """
     encrypted_array = ellipticCurve.encrypt_to_disk(file_name)
     mosaic_to_disc(disc_data_file, encrypted_array)
 
 
-if __name__ == '__main__':
+def decrypt_to_picture(disc_file_name, save_file_name):
+    """
+    :param disc_file_name: the image path and name to decrypt
+    :param save_file_name: the path and name to save the picture
+    :return: the original picture in img folder
+    """
+    disc = Image.open(disc_file_name)
+    position = 759272
+    imdata = []
+    i = 0
+
+    array = list(disc.getdata())
+
+    while i < 219 * 192:
+        if i % 219 == 0:
+            position += 1200 - 219
+        imdata.append(array[position + i])
+        i += 1
+
+    mosaic = Image.new("RGB", (219, 192))
+    mosaic.putdata(imdata)
+    mosaic.save("../img/temp.png")
+
+    decrypt_picture("../img/temp.png", save_file_name)
+
+
+# if __name__ == '__main__':
     # encrypted_array = ellipticCurve.encrypt_to_disk()
     # print("checkpoint 1")
     # encrypt_to_disc("disc_data.txt", encrypted_array)
-    encrypt_to_disc("../img/space.jpg")
+    # encrypt_to_disc("../img/space.jpg")
+    # decrypt_to_picture("../img/the_golden_disc.png", "../img/original_space.png")
