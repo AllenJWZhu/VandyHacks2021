@@ -26,6 +26,12 @@ def encrypt_image():
     return render_template('index.html', filename="the_golden_disc.png")
 
 
+@app.route('/decryptImage', methods=['GET', 'POST'])
+def decrypt_image():
+    imageProcess.decrypt_to_picture('static/uploads/the_golden_disc.png', 'static/uploads/decryptedPic.png')
+    return render_template('index.html', filename="decryptedPic.png")
+
+
 @app.route('/uploadImage', methods=['GET', 'POST'])
 def upload_image():
     if 'file' not in request.files:
@@ -75,6 +81,10 @@ def image():
 @app.route('/index', methods=['GET', 'POST'])
 def encryptIMG():
     return render_template('index.html', encrypt_image=encrypt_image)
+
+@app.route('/index', methods=['GET', 'POST'])
+def decryptIMG():
+    return render_template('index.html', decrypt_image=decrypt_image)
 
 
 @app.route('/upload')

@@ -138,9 +138,9 @@ def decrypt_to_picture(disc_file_name, save_file_name):
 
     mosaic = Image.new("RGB", (219, 192))
     mosaic.putdata(imdata)
-    mosaic.save("../img/temp.png")
+    mosaic.save("static/uploads/temp.png")
 
-    decrypt_picture("../img/temp.png", save_file_name)
+    decrypt_picture("static/uploads/temp.png", save_file_name)
 
 
 # if __name__ == '__main__':
