@@ -2,7 +2,6 @@
 from flask import Flask, flash, request, redirect, url_for, render_template
 import urllib.request
 import os
-import src.imageProcess
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
@@ -38,8 +37,8 @@ def upload_image():
         flash('Allowed image types are - png, jpg, jpeg, gif')
         return redirect(request.url)
 
-# @app.route('/changeImage', methods = ['GET', 'POST'])
-# def change_image(fileName):
+#     # app.route('/changeImage', methods = ['GET', 'POST'])
+#     # def change_image(fileName):
 #     # Get file here 
 #     # filename = secure_filename(file.filename)
 #     # image = file.get(os.path.join(app.config['UPLOAD_FOLDER'], filename))
