@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    background-image: url("../template/create_account_images/space_background.jpg");;
+    background-image: url("../static/create_account_images/space_background.jpg");;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
