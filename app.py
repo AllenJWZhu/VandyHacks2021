@@ -16,13 +16,9 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
  
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-     
- 
-@app.route('/')
-def home():
-    return render_template('index.html')
- 
-@app.route('/', methods=['POST'])
+
+
+@app.route('/uploadImage', methods = ['GET', 'POST'])
 def upload_image():
     if 'file' not in request.files:
         flash('No file part')
@@ -40,11 +36,47 @@ def upload_image():
     else:
         flash('Allowed image types are - png, jpg, jpeg, gif')
         return redirect(request.url)
- 
+
+# @app.route('/changeImage', methods = ['GET', 'POST'])
+# def change_image(fileName):
+#     # Get file here 
+#     # filename = secure_filename(file.filename)
+#     # image = file.get(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+
+
+#     # encrypt the image here
+#     # encryptedFile = encryptImage(image)
+
+#     # save again, get the encrypted file name
+#     # encryptedFilename = 
+#     # follow logic to render encrypted
+#     return render_template('encrypted.html', filename=encryptedFilename)
+
+
+@app.route('/')
+def home():
+    return render_template('create_account.html')
+
+@app.route('/index', methods=['GET', 'POST'])
+def image():
+    return render_template('index.html', upload_image=upload_image)
+
+@app.route('/upload')
+def upload_file():
+   return render_template('upload.html')
+	
+@app.route('/uploader', methods = ['GET', 'POST'])
+def uploader():
+    if request.method == 'POST':
+        f = request.files['file']
+        f.save(secure_filename(f.filename))
+        return 'file uploaded successfully'
+
+
 @app.route('/display/<filename>')
 def display_image(filename):
     #print('display_image filename: ' + filename)
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
  
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
