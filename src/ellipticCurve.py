@@ -141,7 +141,7 @@ class Elliptic:
                 return x0, y0
 
 
-def encrypt_to_disk():
+def encrypt_to_disk(name):
     p = 997
     a = 0
     b = 7
@@ -152,7 +152,7 @@ def encrypt_to_disk():
     ECC = Elliptic(p, a, b, document)
 
     ECC.get_key()
-    name = input("enter the file path and name: ")
+    # name = input("enter the file path and name: ")
     plain = imgToDat.compressedImg(name, 2)
     return ECC.encrypt2(plain)
 

@@ -11,7 +11,7 @@ def compressedImg(filePath, augment=1):
     gcd_val = math.gcd(width, height)
 
     imgCompressed = img.resize(((width // gcd_val * augment), (height // gcd_val * augment)))
-    imgCompressed.save('compressed.png', 'png')
+    # imgCompressed.save('compressed.png', 'png')
 
     if augment == 1:
         return np.array(list(img.getdata())).reshape(-1)
@@ -19,7 +19,7 @@ def compressedImg(filePath, augment=1):
         return np.array(list(imgCompressed.getdata())).reshape(-1)
 
 
-def restoreImg(decrypted, dimSize=(146,96)):
+def restoreImg(decrypted, file_name, dimSize=(146,96)):
     temp = [np.uint8(i) for i in decrypted]
 
     width = int(dimSize[0])
@@ -27,7 +27,7 @@ def restoreImg(decrypted, dimSize=(146,96)):
     temp = np.array(temp).reshape(height, width, 3)
 
     imgRecovered = Image.fromarray(temp)
-    imgRecovered.save("space_re.png", format='png')
+    imgRecovered.save(file_name, format='png')
 
 
 # if __name__ == '__main__':
