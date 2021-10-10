@@ -96,7 +96,7 @@ def golden_disc(file_name, imdata):
         imdata[i] = (imdata[i][0] % 256, imdata[i][1] % 256, imdata[i][2] % 256)
 
     i = 0
-    position = 760000
+    position = 759272
     while i < len(imdata):
         if i%219 == 0:
             position += 1200-219
@@ -106,7 +106,7 @@ def golden_disc(file_name, imdata):
     newim = Image.new("RGB", (1200, 1200))
     newim.putdata(disc_data)
 
-    newim.save("overlap.jpg")
+    newim.save("overlap.png")
 
 
 

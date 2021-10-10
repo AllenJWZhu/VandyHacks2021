@@ -33,7 +33,6 @@ def edit_gsheet(multiples_array):
     #     break
 
 
-
 def get_column():
     gc = pygsheets.authorize(service_file='vandyhack_cred.json')
     sh = gc.open('VandyHacks')
