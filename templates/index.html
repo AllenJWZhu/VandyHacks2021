@@ -1,14 +1,15 @@
 <html>
 <head>
 <title>Python Flask Upload and display image</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />        
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />         -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body>
-<p><h1 align="center">Python Flask Upload and display image</h1></p>
+    <div class="row">
+    <div class="higest"><h1 align="center">Create your own Golden Disc!</h1></div>
 <div class="container">
-<div class="row">
-    <h2>Select a file to upload</h2>
+    <div class="subtitle"><h2>Select a file to upload</h2> </div>
     <p>
         {% with messages = get_flashed_messages() %}
           {% if messages %}
@@ -51,6 +52,7 @@
             </p>
         </dl>
     </form>
+</div>
 </div>
 </div>
 </body>

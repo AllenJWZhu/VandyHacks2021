@@ -1,0 +1,63 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(../static/create_account_images/Voyager-Record-Test-2.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.subtitle 
+{
+    color: #213970;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+	display: grid;
+    grid-template-columns: 1fr;
+}
+
+.row {
+    width: 500px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background:  rgba(255,255,255, 0.5);
+    padding: 30px;
+    margin: 5% auto 0;
+    text-align: center;
+}
+
+input[type=submit] {
+    color: #ffffff;
+    width: 90%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #1c8adb;
+    transition: 0.8s;
+
+}
+
+input[type=submit]:hover
+{
+    transform: scale(0.96);
+}
+
+img{
+    min-width:200px;
+    min-height:200px;
+    max-width:400px;
+    max-height:400px;
+}
+
+.higest {
+    padding-top: 30px;
+    color: #213970;
+    margin-left: auto;
+    margin-right: auto;
+}
