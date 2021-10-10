@@ -10,7 +10,7 @@ import numpy as np
 WIDTH = 146
 HEIGHT = 96
 
-
+ 
 def display_image(imdata):
     newim = Image.new("RGB", (219, 192))
 

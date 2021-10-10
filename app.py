@@ -25,7 +25,7 @@ def encrypt_image():
     imageProcess.encrypt_to_disc('img/space.jpg')
     return render_template('index.html', filename="the_golden_disc.png")
 
-
+ 
 @app.route('/decryptImage', methods=['GET', 'POST'])
 def decrypt_image():
     imageProcess.decrypt_to_picture('static/uploads/the_golden_disc.png', 'static/uploads/decryptedPic.png')
