@@ -20,11 +20,12 @@ def compressedImg(filePath, augment=1):
 
 
 def restoreImg(decrypted, file_name, dimSize=(146,96)):
-    temp = [np.uint8(i) for i in decrypted]
 
-    width = int(dimSize[0])
-    height = int(dimSize[1])
-    temp = np.array(temp).reshape(height, width, 3)
+    # temp = [np.uint8(i) for i in decrypted]
+
+    width = dimSize[0]
+    height = dimSize[1]
+    temp = np.array(decrypted).reshape((height, width, 3))
 
     imgRecovered = Image.fromarray(temp)
     imgRecovered.save(file_name, format='png')

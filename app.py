@@ -8,12 +8,15 @@ import imageProcess
 app = Flask(__name__)
 
 UPLOAD_FOLDER = 'static/uploads/'
+temp = imageProcess.PipeLine()
 
 app.secret_key = "secret key"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+app.config['CURRENT_FILE'] = ''
 
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 
 def allowed_file(filename):
@@ -22,13 +25,20 @@ def allowed_file(filename):
 
 @app.route('/encryptImage', methods=['GET', 'POST'])
 def encrypt_image():
-    imageProcess.encrypt_to_disc('img/space.jpg')
-    return render_template('index.html', filename="the_golden_disc.png")
+    if app.config['CURRENT_FILE'] == '':
+        flash('No picture uploaded')
+        return render_template('index.html')
+    temp.encrypt_to_disc(UPLOAD_FOLDER + app.config['CURRENT_FILE'], UPLOAD_FOLDER + "converted_disc.png")
+    app.config['CURRENT_FILE'] = ''
+    return render_template('index.html', filename="converted_disc.png")
 
- 
+
 @app.route('/decryptImage', methods=['GET', 'POST'])
 def decrypt_image():
-    imageProcess.decrypt_to_picture('static/uploads/the_golden_disc.png', 'static/uploads/decryptedPic.png')
+    if app.config['CURRENT_FILE'] == '':
+        flash('No picture uploaded')
+        return render_template('index.html')
+    temp.decrypt_to_picture(UPLOAD_FOLDER + app.config['CURRENT_FILE'], UPLOAD_FOLDER + 'decryptedPic.png')
     return render_template('index.html', filename="decryptedPic.png")
 
 
@@ -44,6 +54,7 @@ def upload_image():
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        app.config['CURRENT_FILE'] = filename
         # print('upload_image filename: ' + filename)
         flash('Image successfully uploaded and displayed below')
         return render_template('index.html', filename=filename)
@@ -81,6 +92,7 @@ def image():
 @app.route('/index', methods=['GET', 'POST'])
 def encryptIMG():
     return render_template('index.html', encrypt_image=encrypt_image)
+
 
 @app.route('/index', methods=['GET', 'POST'])
 def decryptIMG():

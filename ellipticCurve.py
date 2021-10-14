@@ -2,6 +2,7 @@ import math
 import os
 import random
 import imgToDat
+import numpy as np
 
 
 def read_inverse(filename):
@@ -131,9 +132,9 @@ class Elliptic:
         for charArr in code:
             kQx, kQy = Elliptic.get_ng(self, charArr[0], charArr[1], self.priv_key)
             if kQx < 1e-8:
-                decipher.append(str(charArr[2] * 1000))
+                decipher.append(np.uint8(charArr[2] * 1000))
             else:
-                decipher.append(str((charArr[2] // kQx)))
+                decipher.append(np.uint8(charArr[2] // kQx))
         return decipher
 
     def find_first_feasible(self):
@@ -145,9 +146,10 @@ class Elliptic:
 
 
 def encrypt_to_disk(name):
-    p = 997
+    p = 487
+    # p = 997
     a = 0
-    b = 7
+    b = 3
 
     document = "inverse_p" + str(p) + ".txt"
     if not os.path.exists(document):
@@ -157,13 +159,14 @@ def encrypt_to_disk(name):
     ECC.get_key()
     # name = input("enter the file path and name: ")
     plain = imgToDat.compressedImg(name, 2)
-    return ECC.encrypt2(plain)
+    return ECC.encrypt2(plain)#, plain
 
 
 def decrypt_to_pic(c):
-    p = 997
+    p = 487
+    # p = 997
     a = 0
-    b = 7
+    b = 3
 
     document = "inverse_p" + str(p) + ".txt"
     if not os.path.exists(document):
@@ -175,14 +178,24 @@ def decrypt_to_pic(c):
     return de
 
 
-#############################################################
-# testing code
+############################################################
+# # # testing code
 # if __name__ == '__main__':
-    # if len(plain) == len(de):
-    #     print("same length")
-    #     for j in range(len(plain)):
-    #         if plain[j] != int(de[j]):
-    #             print(plain[j], end=' ')
-    #     print()
-    # else:
-    #     print("no equal length")
+#     encrypt, plain = encrypt_to_disk("./img/space.jpg")
+#     de = decrypt_to_pic(encrypt)
+#     # print(encrypt)
+#     ff = open("tttt.txt", 'w')
+#     ff.write(str(de))
+#     ff.close()
+#     imgToDat.restoreImg(de, "trial.png")
+#
+#     if len(plain) == len(de):
+#         print("same length")
+#         for j in range(len(plain)):
+#             if plain[j] != int(de[j]):
+#                 print(plain[j], end=' ')
+#             if max(encrypt[j]) > 131000:
+#                 print(encrypt[j])
+#         print()
+#     else:
+#         print("no equal length")
