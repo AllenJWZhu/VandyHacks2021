@@ -7,6 +7,9 @@ Inspired by the historic journey of the Voyager spacecraft mission in the year 1
 # What it does
 We accept a user input image. The image is then transformed using our hardest-ever yet beautiful algorithm (ECC algorithm) and encoded into a Golden Record which is the only unique disk in the world. Even the same picture would be rendered into two different disks if a different person conducts the encryption, and each picture would have a unique private key associated with it. Of course, with our beautiful algorithm, we are able to translate the message engraving on the disk and transform it back into the original image. Come with your lovely picture and get your disk like a voyager!
 
+# How to use it
+Using any IDE, you need to first enable python flask. Run the app.py file, in the command line, you should see a local host address. Proceed to that address by right clicking and select the link and follow the instruction as mentioned.
+
 # How we built it
 Python: Using packages like NumPy and PIL to conduct an Elliptical Curve Cryptography encryption for images and display the encrypted images on a golden voyager disc through image processing techniques.
 Google Spreadsheet: Using the Google Cloud Platform to enable API access for both the google drive and google spreadsheet. Then, using a service account coupled with python extension packets (pygsheets for connection to gsheet, and pandas for data frames), necessary data was stored into the spreadsheet and later retrieved through iterating over a generator function of the spreadsheet.
