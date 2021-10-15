@@ -158,7 +158,7 @@ def encrypt_to_disk(name):
 
     ECC.get_key()
     # name = input("enter the file path and name: ")
-    plain = imgToDat.compressedImg(name, 2)
+    plain = imgToDat.compressedImg(name)
     return ECC.encrypt2(plain)#, plain
 
 

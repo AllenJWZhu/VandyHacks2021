@@ -1,19 +1,23 @@
 import numpy as np
 from PIL import Image
-import math
+# import math
 
 
-def compressedImg(filePath, augment=1):
+def compressedImg(filePath, augment=0):
     img = Image.open(filePath)
-    width, height = img.size
+    # width, height = img.size
 
     # calculate gcd value of image to resize original image
-    gcd_val = math.gcd(width, height)
+    # gcd_val = math.gcd(width, height)
 
-    imgCompressed = img.resize(((width // gcd_val * augment), (height // gcd_val * augment)))
+    # new_wid = width // gcd_val * augment
+    # new_hei = height // gcd_val * augment
+
+    imgCompressed = img.resize((146, 96))
+    # imgCompressed = img.resize((new_wid, new_hei))
     # imgCompressed.save('compressed.png', 'png')
 
-    if augment == 1:
+    if augment == -1:
         return np.array(list(img.getdata())).reshape(-1)
     else:
         return np.array(list(imgCompressed.getdata())).reshape(-1)

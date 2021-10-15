@@ -29,7 +29,7 @@ def encrypt_image():
         flash('No picture uploaded')
         return render_template('index.html')
     temp.encrypt_to_disc(UPLOAD_FOLDER + app.config['CURRENT_FILE'], UPLOAD_FOLDER + "converted_disc.png")
-    app.config['CURRENT_FILE'] = ''
+    app.config['CURRENT_FILE'] = "converted_disc.png"
     return render_template('index.html', filename="converted_disc.png")
 
 

@@ -59,6 +59,7 @@ class PipeLine:
         Convert the encrypted data into mosaic and embed into the disc
         """
         new_disc = self.disc_data
+        # size_mod = (size[0]%256, size[1]%256, )
         imdata_main = []
         imdata_support = []
         imdata_support2 = []
