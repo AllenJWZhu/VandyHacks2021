@@ -25,7 +25,7 @@ Everything! We started by getting pretty vague decryption after going through ou
 - The story of the Voyager and the meaning of graphs on its disk
 - Pretty much a lot of topics from the workshop (deep learning, web dev, …)
 # What's next for Voyager Cryptor
-- Further optimize the run time of our EEC algorithm and try to achieve a better balance between encryption efficiency and time consumption.
+- Further optimize the run time of our ECC algorithm and try to achieve a better balance between encryption efficiency and time consumption.
 - Improve the robustness of the functions and interfaces on the website
 - Allow user input of multiple images to encrypt/decrypt at the same time
 - Open up new realms of application (Bitcoin mining, Encrypted chat room, …)
